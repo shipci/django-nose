@@ -27,6 +27,8 @@ install:
   - if [ $DJANGO = 'Django==1.4.1' -o $DJANGO = 'Django==1.5' -o $DJANGO = 'Django==1.6' ]; then pip install south; fi
   - pip install $DJANGO
   - pip install -e .
+  
+  
 script:
   - ./runtests.sh
 
