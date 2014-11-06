@@ -2,26 +2,20 @@ language: python
 
 python:
   - "2.6"
-  - "2.7"
+ # - "2.7"
   
 env:
-  - DJANGO=Django==1.4.1
-  - DJANGO=Django==1.5
-  - DJANGO=Django==1.6
-  - DJANGO=Django==1.7
+ # - DJANGO=Django==1.4.1
+ # - DJANGO=Django==1.5
+  #- DJANGO=Django==1.6
+  #- DJANGO=Django==1.7
   - DJANGO=https://github.com/django/django/archive/master.zip
   
 matrix:
-  include:
-    - python: "3.3"
-      env: DJANGO=Django==1.5
-    - python: "3.3"
-      env: DJANGO=https://github.com/django/django/archive/master.zip
   exclude:
     - python: "2.6"
       env: DJANGO=https://github.com/django/django/archive/master.zip
-    - python: "2.6"
-      env: DJANGO=Django==1.7
+    
       
 install:
   - if [ $DJANGO = 'Django==1.4.1' -o $DJANGO = 'Django==1.5' -o $DJANGO = 'Django==1.6' ]; then pip install south; fi
